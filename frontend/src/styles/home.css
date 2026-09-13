@@ -1,0 +1,24 @@
+body {
+  background: radial-gradient(circle at top left, #0b1f4d 0%, #08142e 40%, #050a1f 100%);
+  min-height: 100vh;
+}
+
+.myhome{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+/*
+.inhome{
+    background: linear-gradient(
+    135deg,
+    #0b1f4d 0%,
+    #08142e 40%,
+    #050a1f 100%
+  );
+}
+*/
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}

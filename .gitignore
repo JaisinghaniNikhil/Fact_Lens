@@ -1,0 +1,15 @@
+# Environment variables — never commit secrets
+.env
+.env.local
+*credentials*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# OS/editor junk
+.DS_Store
+*.log
