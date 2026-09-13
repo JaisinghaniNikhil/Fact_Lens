@@ -1,6 +1,6 @@
 const NodeCache = require('node-cache');
 
-const cache = NodeCache({stdTTL : 6*60*60, checkPeriod : 600})
+const cache = new NodeCache({stdTTL : 6*60*60, checkPeriod : 600})
 
 function makeCacheKey (text)  {
     return text.trim().toLowerCase.replace(/\s+/g," ");
