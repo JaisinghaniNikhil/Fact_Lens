@@ -12,7 +12,7 @@ function DetectorComp() {
       setError('')
       setResult(null)
 
-      const response = await fetch('http://localhost:7900/api/analyze', {
+      const response = await fetch('https://fact-lens-tdlu.onrender.com/api/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: input }),
