@@ -2,30 +2,26 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { NewspaperIcon } from 'lucide-react'
 
+// Same backend used everywhere else in the app — keep this in sync with
+// Dashboard.jsx's API_BASE.
+const API_BASE = 'https://fact-lens-tdlu.onrender.com'
+
 function Headlines() {
   const [news, setNews] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   const getNews = async () => {
-    if (!import.meta.env.VITE_NEWS_API_KEY) {
-      setError('Missing News API key. Add VITE_NEWS_API_KEY to frontend .env.')
-      setLoading(false)
-      return
-    }
-
     try {
-      const res = await axios.get('https://newsapi.org/v2/everything', {
-        params: {
-          q: 'India',
-          sortBy: 'publishedAt',
-          language: 'en',
-          pageSize: 12,
-          apiKey: import.meta.env.VITE_NEWS_API_KEY,
-        },
-      })
+      setLoading(true)
+      setError(null)
 
-      setNews(res.data.articles || [])
+      // Calls our own backend, which proxies NewsAPI's /v2/everything.
+      // No API key needed here — the backend holds it server-side, and
+      // this also avoids NewsAPI's block on direct browser requests in
+      // production.
+      const res = await axios.get(`${API_BASE}/api/news/headlines`)
+      setNews(res.data || [])
     } catch {
       setError('Failed to fetch headlines.')
     } finally {
