@@ -38,7 +38,7 @@ function Footer() {
     setStatus('')
 
     try {
-      const response = await fetch('http://localhost:7900/api/feedback', {
+      const response = await fetch('https://fact-lens-tdlu.onrender.com/api/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

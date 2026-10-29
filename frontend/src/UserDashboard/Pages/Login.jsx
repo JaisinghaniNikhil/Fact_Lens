@@ -46,7 +46,7 @@ function Login() {
         setLoading(true);
 
         try{
-            const res = await axios.post('http://localhost:7900/api/auth/login', formData);
+            const res = await axios.post('https://fact-lens-tdlu.onrender.com/api/auth/login', formData);
             
             localStorage.setItem('token', res.data.token);
             

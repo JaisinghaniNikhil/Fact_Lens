@@ -53,7 +53,7 @@ function Signup() {
         if(!validate()) return;
 
         try{
-            const res = await axios.post('http://localhost:7900/api/auth/signup', formData);
+            const res = await axios.post('https://fact-lens-tdlu.onrender.com/api/auth/signup', formData);
             alert(res.data.message);
             navigate('/user/login');
         }
