@@ -4,7 +4,7 @@ import { NewspaperIcon } from 'lucide-react'
 
 // Same backend used everywhere else in the app — keep this in sync with
 // Dashboard.jsx's API_BASE.
-const API_BASE = 'https://fact-lens-tdlu.onrender.com'
+const API_BASE = 'http://localhost:7900'
 
 function Headlines() {
   const [news, setNews] = useState([])

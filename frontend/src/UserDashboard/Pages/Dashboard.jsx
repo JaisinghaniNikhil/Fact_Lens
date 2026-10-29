@@ -7,7 +7,7 @@ import NewsCard from '../Components/NewsCard'
 import SavedArticles from '../Components/SavedArticles'
 import axios from 'axios'
 
-const API_BASE = 'https://fact-lens-tdlu.onrender.com'
+const API_BASE = 'http://localhost:7900'
 
 function Dashboard() {
   const [user, setUser] = useState({})
